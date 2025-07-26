@@ -1,0 +1,61 @@
+
+<div class="header">
+  <div class="header-content">
+    <img src="assets/Cat_PDF.jpg" alt="Cat" class="cat-icon" />
+    <h1 class="title">PDF Compressor</h1>
+  </div>
+</div>
+
+<div class="upload-box">
+  <img
+    [src]="uploadComplete ? 'assets/done-icon.jpg' : 'assets/upload-icon.png'"
+    alt="Upload Icon"
+    class="upload-icon"
+  />
+  <p>
+    {{
+    errorMessage
+      ? errorMessage
+      : uploadComplete
+        ? 'Your compressed Pdf is ready!!'
+        : selectedFileName
+          ? 'Selected file: ' + selectedFileName
+          : 'Drag your pdf files here, or browse a file to upload'
+  }}
+  </p>
+  <input
+    type="file"
+    #fileInput
+    hidden
+    (change)="onFileSelected($event)"
+    accept=".pdf"
+  />
+
+<div class="button-group">
+  <!-- When file is NOT uploaded yet -->
+  <ng-container *ngIf="!uploadComplete; else downloadSection">
+    <button class="browse-button" (click)="triggerFileInput(fileInput)">
+      📁 BROWSE FILES
+    </button>
+
+    <button
+      class="upload-button"
+      [disabled]="!selectedFileName"
+      (click)="uploadFile()"
+    >
+      🚀 UPLOAD FILE
+    </button>
+
+    <div *ngIf="isLoading" class="loader"></div>
+  </ng-container>
+
+  <!-- When upload is successful -->
+  <ng-template #downloadSection>
+    <button class="upload-button" (click)="downloadCompressedPdf()">
+      📥 DOWNLOAD COMPRESSED PDF
+    </button>
+  </ng-template>
+</div>
+
+
+</div>

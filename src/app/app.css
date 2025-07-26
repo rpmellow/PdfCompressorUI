@@ -1,0 +1,136 @@
+
+
+
+
+/* HEADER */
+.header {
+  background: linear-gradient(90deg, #9c89b8, #f8a1d1);
+  padding: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.cat-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+  margin: 80px auto;
+  width: 360px;
+  background: #fff7d6;
+  border: 2px dashed #d8a4f1;
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 12px 20px rgba(200, 120, 255, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.upload-box:hover {
+  transform: scale(1.03);
+}
+
+.upload-icon {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 20px;
+}
+
+.upload-box p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+   color: #69359c;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+
+.button-group {
+  display: flex;
+  flex-direction: column;   /* Stack buttons vertically */
+  align-items: center;      /* Center them horizontally */
+  gap: 12px;                /* Space between buttons */
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Shared button styles */
+.browse-button,
+.upload-button {
+  width: 100%;               /* Full width of button group */
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Browse button styling */
+.browse-button {
+  background-color: #ff6e9e;
+}
+
+.browse-button:hover {
+  background-color: #ff4c87;
+  transform: translateY(-2px);
+}
+
+/* Upload button styling */
+.upload-button {
+  background-color: #6c63ff;
+}
+
+.upload-button:hover:enabled {
+  background-color: #594eea;
+  transform: translateY(-2px);
+}
+
+
+/* Disabled state */
+.upload-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;              /* Light grey background border */
+  border-top: 4px solid #6c63ff;          /* Primary spinner color (purple) */
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 0.8s linear infinite;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
