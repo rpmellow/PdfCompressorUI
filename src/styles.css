@@ -1,0 +1,43 @@
+/* body {
+  margin: 0;
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(252, 224, 255, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(255, 240, 255, 0.6) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255, 240, 255, 0.4) 0%, transparent 50%),
+    linear-gradient(120deg, #f3e7ff, #ffe6f2, #fbeaff);
+  background-size: 300% 300%;
+  animation: animatedBackground 15s ease-in-out infinite;
+  color: #2e2e2e;
+  min-height: 100vh;
+  overflow-x: hidden;
+} */
+
+
+
+body {
+  margin: 0;
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  background-color: #fef6ff;
+  background: url('assets/Moon.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: lighten;
+  color: #2e2e2e;
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
